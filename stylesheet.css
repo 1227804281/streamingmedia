@@ -1,0 +1,482 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of CSS reset */
+/* Start of CSS I Write */
+
+html {
+    background-color: #020659;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0px 10px 30px;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 30px 0 10px 20px;
+    color: #590242;
+}
+
+h2 {
+    display: none;
+}
+
+p,
+dl,
+dd {
+    font-size: 1em;
+}
+
+nav {
+    background-color: #020873;
+    height: 60px;
+    max-height: fit-content;
+    width: 375px;
+    top: 0;
+    position: fixed;
+    z-index: 15;
+}
+
+nav ul {
+    overflow: hidden;
+    list-style: none;
+    background-color: #020873;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+li a {
+    color: #ffffff;
+    display: block;
+    padding: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #590242;
+}
+
+.title {
+    font-size: 1.75em;
+    font-weight: bold;
+    left: 100px;
+    top: 20px;
+    padding: 0;
+    text-transform: none;
+    position: absolute;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+label span:before,
+label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: 5px;
+}
+
+label span:after {
+    top: -5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked~ul {
+    max-height: 500px;
+}
+
+input:checked~label span {
+    background: transparent;
+}
+
+input:checked~label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked~label span:after {
+    transform: rotate(45deg);
+}
+
+input:checked~label:not(.steps) span:before,
+input:checked~label:not(.steps) span:after {
+    top: 0;
+}
+
+header {
+    background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
+    color: #ffffff;
+    position: relative;
+    margin-top: 60px;
+    height: 155px;
+}
+
+header p {
+    line-height: 1.2em;
+    padding: 0 30px 10px 30px;
+}
+
+#trending {
+    color: #590242;
+}
+
+.container {
+    display: flex;
+    overflow: scroll;
+    scrollbar-color: #590242 #fff;
+    height: fit-content;
+}
+
+.trenditem {
+    margin: 0 10px 10px 10px;
+    height: 335px;
+}
+
+.trenditem img {
+    z-index: 2;
+    position: relative;
+    width: 300px;
+}
+
+.trenditem h4,
+.trenditem p {
+    top: 300px;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 4;
+}
+
+.trenditem audio {
+    z-index: 5;
+    top: -175px;
+    position: relative;
+}
+
+.trenditem h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px;
+}
+
+.trenditem p {
+    padding: 3px;
+}
+
+.trenditem span {
+    font-style: italic;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    height: 20px;
+    width: 150px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #590242;
+}
+
+.button:hover {
+    background-color: #2104D9;
+}
+
+.playlistflex {
+    display: flex;
+    overflow: scroll;
+    scrollbar-color: #030A8C #0D8DFB;
+    height: fit-content;
+}
+
+#lightblue {
+    background-color: #2699FB;
+}
+
+#darkblue {
+    background-color: #020873;
+}
+
+.playlistsitem,
+.curateditem {
+    color: #fff;
+    width: 200px;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+}
+
+.playlistsitem {
+    background-color: #0D8DFB;
+}
+
+.curateditem {
+    background-color: #020659;
+}
+
+.playlistflex h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 3px 3px 7px 3px;
+}
+
+footer {
+    color: #590242;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.75em;
+}
+
+
+/* End of mobile first coding. Media querie moments. */
+@media screen and (min-width:834px) {
+
+    body,
+    nav {
+        width: 834px;
+    }
+
+    nav {
+        height: 75px;
+    }
+
+    nav ul {
+        overflow: visible;
+        position: absolute;
+        height: 75px;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .title {
+        position: relative;
+        left: auto;
+        top: auto;
+        padding: 20px 15px 15px 15px;
+    }
+
+    label span,
+    input {
+        display: none;
+    }
+
+    header {
+        margin-top: 75px;
+        height: 100px;
+    }
+
+    .button {
+        float: right;
+    }
+
+    #playlists,
+    #trending,
+    #curated,
+    footer {
+        clear: both;
+    }
+
+    .playlistflex {
+        flex-direction: column;
+        height: 300px;
+        overflow: scroll;
+    }
+
+    #gridcontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #playlists,
+    #curated {
+        width: 418px;
+        margin-top: 50px;
+    }
+
+    .playlistsitem,
+    .curateditem {
+        width: 365px;
+        padding: 10px;
+        margin: 15px;
+    }
+
+    .playlistsitem img,
+    .curateditem img {
+        float: left;
+        margin-right: 10px;
+    }
+}
